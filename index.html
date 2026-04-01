@@ -31,29 +31,24 @@
     </div>
 
     <script type='text/javascript'>
-        function initEmbeddedMessaging() {
-            try {
-                embeddedservice_bootstrap.settings.language = 'es_MX';
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'es_MX'; // For example, enter 'en' or 'en-US'
 
-                embeddedservice_bootstrap.init(
-                    '00DWA000004rOTJ',
-                    'Chat_Web_UAT',
-                    'https://camara-rauch--rauchuat.sandbox.my.site.com/ESWChatWebUAT1775060573729',
-                    {
-                        scrt2URL: 'https://camara-rauch--rauchuat.sandbox.my.salesforce-scrt.com'
-                    }
-                );
-            } catch (err) {
-                console.error('Error al inicializar Embedded Messaging: ', err);
-            }
-        };
-    </script>
-
-    <script 
-        type='text/javascript' 
-        src='https://camara-rauch--rauchuat.sandbox.my.site.com/ESWChatWebUAT1775060573729/assets/js/bootstrap.min.js' 
-        onload='initEmbeddedMessaging()'>
-    </script>
+			embeddedservice_bootstrap.init(
+				'00DWA000004rOTJ',
+				'Chat_GitHub_Agentforce_test',
+				'https://camara-rauch--rauchuat.sandbox.my.site.com/ESWChatGitHubAgentforce1775070453135',
+				{
+					scrt2URL: 'https://camara-rauch--rauchuat.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://camara-rauch--rauchuat.sandbox.my.site.com/ESWChatGitHubAgentforce1775070453135/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
 </body>
 </html>
