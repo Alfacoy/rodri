@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Salesforce Chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 2rem;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Página de Prueba: Embedded Messaging</h1>
+        <p>Si la configuración es correcta, el botón de chat debería aparecer en la esquina inferior derecha.</p>
+    </div>
+
+    <script type='text/javascript'>
+        function initEmbeddedMessaging() {
+            try {
+                embeddedservice_bootstrap.settings.language = 'es_MX';
+
+                embeddedservice_bootstrap.init(
+                    '00DWA000004rOTJ',
+                    'Chat_Web_UAT',
+                    'https://camara-rauch--rauchuat.sandbox.my.site.com/ESWChatWebUAT1775060573729',
+                    {
+                        scrt2URL: 'https://camara-rauch--rauchuat.sandbox.my.salesforce-scrt.com'
+                    }
+                );
+            } catch (err) {
+                console.error('Error al inicializar Embedded Messaging: ', err);
+            }
+        };
+    </script>
+
+    <script 
+        type='text/javascript' 
+        src='https://camara-rauch--rauchuat.sandbox.my.site.com/ESWChatWebUAT1775060573729/assets/js/bootstrap.min.js' 
+        onload='initEmbeddedMessaging()'>
+    </script>
+
+</body>
+</html>
